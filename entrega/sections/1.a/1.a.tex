@@ -1,0 +1,177 @@
+\documentclass[../../entrega.tex]{subfiles}
+\begin{document}
+\subsection{Inciso (a)}
+En su clásico \emph{Some Unpleasant Monetarist Arithmetic}, \textcite{sargent_unpleasant_1981} ilustran el peligro de considerar de manera independiente a la política fiscal y política monetaria, utilizando un modelo simple para mostrar que política monetaria contractiva puede bajar la inflación en el corto plazo, pero a costo de mayor inflación en el futuro.
+Peor aun, describen un caso en el cual una política monetaria que busca bajar la inflación puede derivar en mayor inflación en el corto plazo y en el futuro.
+El trabajo de \textcite{werning_recalculating_2024} busca replicar los resultados de \textcite{sargent_unpleasant_1981} con un modelo diferente, parametrizado en términos de la tasa de interés nominal y del señoreaje en lugar de la tasa de crecimiento del dinero usada por el modelo original.
+
+% Hay dos resultados principales en el artículo de \textcite{werning_recalculating_2024}, denominados ``Result \#1'' y ``Result \#2'' en el marco de la tasa de interés nominal como instrumento de política (\emph{policy}), y ``Result \#1 Again'' y ``Result \#2 Again'' en el marco de señoreaje como instrumento de política.
+% Siguiendo el orden del trabajo original, replicamos primero los resultados en el marco de la tasa de interés nominal.
+
+\subsubsection{El modelo}
+El modelo se define a partir de cuatro ecuaciones: la restricción presupuestaria del gobierno (expresada en términos nominales), una definición de señoreaje, una condición de vaciamiento del mercado de dinero (expresada en términos reales) y la ecuación de Fisher para las tasas de interés,
+\begin{gather}
+    B _{t, t + 1} + P_t s_t = P_t d_t + (1 + i _{t - 1, t}) B _{t - 1, t},\\
+    s_t = \frac{M _{t, t + 1} - M _{t - 1, t}}{P_t},\\
+    \frac{M _{t, t + 1}}{P_t} = L_t(i _{t, t + 1}),\\
+    1 + i _{t, t + 1} = (1 + r _{t, t + 1})(1 + \pi _{t, t + 1}),
+\end{gather}
+para $t = 0, 1, \ldots$ donde $P_t$ es el nivel de precios, $d_t$ es el déficit fiscal real (exógeno), $B _{t, t + 1}$ y $M _{t, t + 1}$ son las tenencias de los hogares de bonos (del gobierno) y dinero \emph{cash} en términos nominales entre periodos $t$ y $t + 1$, $\pi _{t, t + 1} = P _{t + 1} / P_t - 1$ es la tasa (neta) de inflación, $i _{t, t + 1}$ es la tasa de interés nominal y $r _{t, t + 1} > 0$ es la tasa de interés real entre $t$ y $t + 1$.
+La condición de \emph{no-Ponzi} implementada es $\lim_t q_t B _{t, t + 1} / P_t = 0$, donde $q_t$ es el factor de descuento implicado por el proceso de tasas de interés reales. En particular,
+\begin{equation*}
+    q_t = \prod_{k=0}^{t-1} \frac{1}{1 + r_{k,k+1}}
+\end{equation*}
+para $t \geq 1$ y $q_0 = 1$.
+La demanda real de dinero, $L_t(i)$ es una función no-creciente.
+La sucesión de tasas de interés $(r _{t, t + 1})$ se asume exógena.
+Las variables $B _{-1, 0}$, $M _{-1, 0}$ y $i _{-1, 0}$ son valores iniciales predeterminados.
+% Sargent y Wallace asumen que $M _{0, 1}$ también es dado % TODO: werning no?
+Definimos, por último, a los símbolos $\omega_0$ y $\Delta_0$ como
+\begin{gather}
+    \omega_0 \equiv (1 + i_{-1, 0}) \frac{B_{-1, 0}}{M_{-1, 0}},\label{eq:1a-omega}\\
+    1 + \Delta_0 \equiv \frac{M _{0, 1}}{M _{-1, 0}}\label{eq:1a-delta}.
+\end{gather}
+
+\subsection{Restricciones presupuestarias en valor presente}
+% TODO: introducir mejor
+Para obtener las dos expresiones equivalentes que sintetizan las restricciones presupuestarias del gobierno, comenzamos con la restricción presupuestaria periodo-a-periodo y la condición de no-Ponzi.
+Iterando hacia adelante la restricción presupuestaria del gobierno y aplicando la condición de no-Ponzi, obtenemos la restricción presupuestaria intertemporal
+\begin{equation}
+    \sum_{t=0}^{\infty} q_t s_t - \frac{(1 + i_{-1,0})B_{-1,0}}{P_0} = D,
+\end{equation}
+donde $D \equiv \sum_{t=0}^{\infty} q_t d_t$ representa el valor presente de los déficits fiscales futuros (dado exógenamente).
+Para llegar a la ecuación (1) del artículo, debemos manipular el término inicial que involucra la deuda. Primero, expresamos el valor real de la deuda inicial en términos de las variables definidas en las ecuaciones (\ref{eq:1a-omega}) y (\ref{eq:1a-delta}):
+\begin{equation}
+    \frac{(1 + i_{-1,0})B_{-1,0}}{P_0} = \frac{(1 + i_{-1,0})B_{-1,0}}{M_{-1,0}} \frac{M_{-1,0}}{P_0} = \omega_0 \frac{M_{-1,0}}{P_0}.
+\end{equation}
+El nivel de precios inicial $P_0$ puede expresarse usando la condición de equilibrio del mercado monetario:
+\begin{equation}
+    P_0 = \frac{M_{0,1}}{L_0(i_{0,1})} = \frac{M_{-1,0}(1 + \Delta_0)}{L_0(i_{0,1})}
+\end{equation}
+Por lo tanto:
+\begin{equation}
+    \frac{(1 + i_{-1,0})B_{-1,0}}{P_0} = \frac{\omega_0}{1 + \Delta_0}L_0(i_{0,1})
+\end{equation}
+De manera similar, podemos expresar el señoreaje inicial $s_0$ como:
+\begin{equation}
+    s_0 = \frac{M_{0,1} - M_{-1,0}}{P_0} = \frac{M_{-1,0}(\Delta_0)}{M_{-1,0}(1 + \Delta_0)}L_0(i_{0,1}) = \frac{\Delta_0}{1 + \Delta_0}L_0(i_{0,1})
+\end{equation}
+Separando el primer término de la sumatoria y sustituyendo las expresiones anteriores:
+\begin{align*}
+    \sum_{t=0}^{\infty} q_t s_t - \frac{(1 + i_{-1,0})B_{-1,0}}{P_0} & = s_0 + \sum_{t=1}^{\infty} q_t s_t - \frac{\omega_0}{1 + \Delta_0}L_0(i_{0,1}),                                       \\
+                                                                     & = \frac{\Delta_0}{1 + \Delta_0}L_0(i_{0,1}) + \sum_{t=1}^{\infty} q_t s_t - \frac{\omega_0}{1 + \Delta_0}L_0(i_{0,1}), \\
+\end{align*}
+llegando finalmente a
+\begin{equation}
+    \sum_{t=1}^{\infty} q_t s_t + \frac{\Delta_0 - \omega_0}{1 + \Delta_0}L_0(i_{0,1}) = D,
+\end{equation}
+que es la ecuación (1) del artículo de Werning.
+La interpretación económica es clara: el valor presente del señoreaje futuro ($\sum_{t=1}^{\infty} q_t s_t$) más el término que captura el señoreaje inicial neto del valor real de la deuda inicial ($L_0(i_{0,1})(\Delta_0 - \omega_0)/(1 + \Delta_0)$) debe ser igual al valor presente de los déficits fiscales futuros ($D$).
+
+Procedemos ahora a derivar una expresión alternativa para la restricción presupuestaria intertemporal.
+Partiendo nuevamente de la restricción presupuestaria en valor presente anterior y sustituyendo la definición de señoreaje, $s_t = (M_{t,t+1} - M_{t-1,t})/P_t$, obtenemos
+\begin{equation}
+    \sum_{t=0}^{\infty} q_t \left(\frac{M_{t,t+1} - M_{t-1,t}}{P_t}\right) - \frac{(1 + i_{-1,0})B_{-1,0}}{P_0} = D.
+\end{equation}
+Agrupando los términos que contienen $M_{t,t+1}$ en la sumatoria, llegamos a
+\begin{equation}
+    \sum_{t=0}^{\infty} q_t \left(\frac{M_{t,t+1}}{P_t} - \frac{q_{t+1}}{q_t}\frac{M_{t,t+1}}{P_{t+1}}\right) - \frac{M_{-1,0}}{P_0} - \frac{(1 + i_{-1,0})B_{-1,0}}{P_0} = D.
+\end{equation}
+El término dentro del paréntesis puede reescribirse usando la ecuación de Fisher y la definición del factor de descuento,
+\begin{align*}
+    \frac{M_{t,t+1}}{P_t} - \frac{q_{t+1}}{q_t}\frac{M_{t,t+1}}{P_{t+1}} & = \frac{M_{t,t+1}}{P_t}\left(1 - \frac{q_{t+1}}{q_t}\frac{P_t}{P_{t+1}}\right)           \\
+                                                                         & = \frac{M_{t,t+1}}{P_t}\left(1 - \frac{1}{1 + r_{t,t+1}}\frac{1}{1 + \pi_{t,t+1}}\right) \\
+                                                                         & = \frac{M_{t,t+1}}{P_t}\frac{i_{t,t+1}}{1 + i_{t,t+1}}.
+\end{align*}
+Los términos iniciales pueden combinarse usando las definiciones de $\omega_0$ y $\Delta_0$,
+\begin{equation}
+    \frac{M_{-1,0}}{P_0} + \frac{(1 + i_{-1,0})B_{-1,0}}{P_0} = \frac{M_{-1,0} + (1 + i_{-1,0})B_{-1,0}}{M_{-1,0}(1 + \Delta_0)}L_0(i_{0,1}) = \frac{1 + \omega_0}{1 + \Delta_0}L_0(i_{0,1}).
+\end{equation}
+Sustituyendo estas expresiones en la ecuación anterior obtenemos la ecuación (2) del artículo,
+\begin{equation}
+    \sum_{t=0}^{\infty} q_t \frac{i_{t,t+1}}{1 + i_{t,t+1}}L_t(i_{t,t+1}) - \frac{1 + \omega_0}{1 + \Delta_0}L_0(i_{0,1}) = D.\label{eq:eq2}
+\end{equation}
+Esta expresión alternativa de la restricción presupuestaria tiene una interpretación económica particular.
+El primer término representa el valor presente del beneficio financiero de usar dinero en lugar de deuda que paga intereses.
+Desde la perspectiva del gobierno, ambos son pasivos pero con diferentes tasas de retorno: $0$ para el dinero y $i_{t,t+1}$ para los bonos.
+La diferencia en retornos, dada por la tasa nominal $i_{t,t+1}$, actúa entonces como un impuesto sobre el dinero relativo a los bonos.
+El segundo término captura el valor real inicial de todos los pasivos del gobierno, tanto dinero como deuda.
+
+\subsubsection{Dos curvas de Laffer}
+La curva de Laffer tradicional se define para un escenario estacionario con demanda de dinero e inflación constantes como
+\begin{equation}
+    \frac{\bar{\pi}}{1 + \bar{\pi}} L_(\bar{\pi}),
+\end{equation}
+donde por simplicidad escribimos $L$ como función de $\pi$ (en lugar de $i$), con $1 + i = (1 + \pi)(1 + r)$ y $r$ dado.
+Esta curva captura el valor real del flujo de nuevas emisiones monetarias.
+La ecuación (\ref{eq:eq2}) sugiere considerar una curva de Laffer alternativa,
+\begin{equation}
+    \frac{i_{t, t + 1}}{1 + i_{t, t + 1}} L_t(i_{t, t + 1})
+\end{equation}
+que, señala el autor, tiene la ventaja de no requerir estacionariedad ni una tasa de inflación constante.
+La figura \ref{fig:figure1} ilustra ambas curvas de Laffer usando la especificación de demanda de dinero lineal del ejemplo de \textcite{sargent_unpleasant_1981}.
+Werning explica que como $r > 0$, la curva de Laffer alternativa se encuentra por encima de la tradicional, y que si bien las curvas de Laffer pueden o no tener un máximo, cuando existe para la curva tradicional, el máximo de la curva alternativa ocurre a una tasa de inflación menor.
+Esto implica que es más probable encontrarse en el lado ``malo'' de la curva alternativa, que se ve visualmente en la figura \ref{fig:figure1}.
+
+\subsubsection{La perspectiva de la tasa de interés nominal}
+La ecuación (\ref{eq:eq2}) nos permite estudiar directamente la relación entre tasas de interés e inflación, explotando la separabilidad aditiva de la restricción presupuestaria.
+Dado que las tasas reales son exógenas, existe una relación directa entre tasas nominales e inflación para todo $t = 0, 1, \ldots$.
+\textcolor{red}{TODO: completar}
+
+\paragraph[Resultado 1]{\emph{Resultado 1: Inflación más baja hoy, más alta mañana.}}\label{par:result1}
+Si la curva de Laffer alternativa $i/(1 + i)L_t(i)$ es monótona creciente, el lado izquierdo de la ecuación (\ref{eq:eq2}) es creciente en las tasas de interés.
+Por lo tanto, partiendo de cualquier secuencia de tasas de interés que satisfaga la restricción presupuestaria, una disminución en las tasas de interés en algunos períodos requiere necesariamente un aumento en otros períodos para mantener la igualdad.
+Lo mismo aplica entonces para la inflación: una menor inflación hoy debe ser compensada con mayor inflación en el futuro.
+
+Este resultado se extiende a situaciones donde la curva de Laffer alternativa no es uniformemente creciente.
+La intuición es sencilla: mientras el equilibrio inicial se encuentre en regiones donde la curva es localmente creciente, reducciones marginales en las tasas de interés (y por ende en la inflación) en algunos períodos deben ser compensadas con aumentos en otros períodos para mantener la igualdad (\ref{eq:eq2}).
+Desde una perspectiva de finanzas públicas, este caso corresponde al escenario regular donde reducciones en algunas tasas impositivas requieren aumentos en otras.
+
+\paragraph[Resultado 2]{\emph{Resultado 2: Inflación más alta en todos los períodos.}}
+Consideremos ahora el caso donde la curva de Laffer alternativa no es monótona.
+Para simplificar, supongamos que existe un umbral $\bar{i}_t > 0$ tal que la curva es creciente para $i < \bar{i}_t$ y decreciente para $i > \bar{i}_t$, con $iL_t(i)/(1 + i) \to 0$ cuando $i \to \infty$.
+
+Si el equilibrio inicial se ubica en ambos lados de la curva (es decir, existe algún período $t$ con $i_t < \bar{i}_t$ y otro período $t' \neq 0$ con $i_{t'} > \bar{i}_{t'}$), es posible aumentar marginalmente ambas tasas de interés manteniendo la igualdad (\ref{eq:eq2}).
+La inflación aumentará entonces en ambos períodos.
+Un caso similar ocurre cuando $i_{0,1} > \bar{i}_0$ pero el término completo $i/(1 + i)L_0(i) - ((1 + \omega_0)/(1 + \Delta_0))L_0(i)$ es localmente creciente.
+
+Lo opuesto también es posible: reducir la inflación en todos los períodos.
+Desde una perspectiva de finanzas públicas, esta situación corresponde a estar en el lado ``bueno'' de la curva de Laffer, donde reducciones generalizadas de impuestos son viables.
+
+Si el equilibrio inicial estuviese enteramente en el lado ``bueno'' de la curva ($i_t < \bar{i}_t$ para todo $t \geq 0$), cambios marginales nos llevan al escenario del \hyperref[par:result1]{Resultado 1}.
+Sin embargo, aumentos discretos en las tasas de interés siguen siendo posibles: basta con saltar al otro lado de la curva, reemplazando $i_{t,t+1}$ con $i_{t,t+1}' > \bar{i}_t > i_{t,t+1}$ tal que $i_{t,t+1}L_t(i_{t,t+1})/(1 + i_{t,t+1}) = i_{t,t+1}'L_t(i_{t,t+1}')/(1 + i_{t,t+1}')$.
+
+\subsubsection{La perspectiva del señoreaje}
+Estudiamos ahora las variaciones locales en el timing del señoreaje y sus efectos sobre la inflación.
+Si bien Werning desarrolla el caso general no estacionario en el apéndice, nos enfocamos aquí en el caso estacionario que presenta en el texto principal del artículo.
+
+Partiendo de una trayectoria estacionaria $(\bar{s}, \bar{m}, \bar{\pi})$ con demanda de dinero constante, la solución acotada única para la inflación viene dada por
+\begin{equation}
+    \tilde{\pi}_{t-1,t} = \frac{1}{\epsilon}\frac{1}{\bar{m}}\sum_{\tau=1}^{\infty}\phi^\tau\tilde{s}_{t+\tau}, \quad t = 1,2,\ldots,
+\end{equation}
+donde $\phi \equiv (1 + \bar{\pi})/(1 + \epsilon^{-1}(1 + \bar{\pi})^{-1})$ y $\epsilon \equiv -L'(\bar{r} + \bar{\pi})/\bar{m}$ es la semielasticidad local de la demanda de dinero.
+Esta fórmula requiere $\phi < 1$, lo que equivale a estar en la porción creciente de la curva de Laffer tradicional.
+La relación es forward-looking porque la demanda de dinero también lo es, y solo en el límite cuando $\epsilon \to 0$ la relación se vuelve miope.
+
+\paragraph[Resultado 1 de nuevo]{\emph{Resultado 1 (de nuevo)}}\label{par:result1again}
+Cuando
+\begin{equation*}
+    \phi < 1/(1 + \bar{r}),
+\end{equation*}
+que se garantiza para $\epsilon$, $\bar{\pi}$ o $\bar{r}$ suficientemente bajos, existe un trade-off ineludible entre inflación presente y futura.
+Para ver esto, consideremos una reducción del señoreaje en períodos tempranos compensada con aumentos en el futuro que satisfagan $\sum_{t=1}^{\infty}(1/(1 + \bar{r}))^t\tilde{s}_t = 0$.
+Esta recomposición del señoreaje aumenta la inflación en el futuro cuando $\tilde{s}_t$ sube.
+Sin embargo, reduce la inflación en períodos anteriores porque, con $\phi < 1/(1 + \bar{r})$, la fórmula para $\tilde{\pi}$ asigna menos peso al señoreaje futuro.
+Lo opuesto ocurre si adelantamos el señoreaje: la inflación sube hoy y baja mañana.
+
+Este argumento se concentra en el término $\sum_{t=1}^{\infty}(1/(1 + \bar{r}))^t\tilde{s}_t$ de la restricción presupuestaria, pero la lógica y las conclusiones se mantienen al considerar el término $(\Delta_0 - \omega_0)/(1 + \Delta_0)L_0(i_{0,1})$.
+
+\paragraph[Resultado 2 de nuevo]{\emph{Resultado 2 (de nuevo)}}\label{par:result2again}
+Cuando
+\begin{equation*}
+    \phi > 1/(1 + \bar{r}),
+\end{equation*}
+una reducción del señoreaje en períodos tempranos sigue requiriendo aumentos futuros para satisfacer la restricción presupuestaria.
+Sin embargo, como $\phi > 1/(1 + \bar{r})$, la fórmula para $\tilde{\pi}$ asigna más peso al señoreaje futuro que el implícito en la restricción presupuestaria, por lo que la inflación aumenta en todos los períodos.
+\textcolor{red}{TODO: explicar mejor}
+\end{document}

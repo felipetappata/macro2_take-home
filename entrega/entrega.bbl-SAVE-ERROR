@@ -1,0 +1,187 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.2 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{cms/global//global/global}
+    \entry{sargent_unpleasant_1981}{article}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=7befdd517ea754e0194ebd60f235f738}{%
+           family={Sargent},
+           familyi={S\bibinitperiod},
+           given={Thomas\bibnamedelima J.},
+           giveni={T\bibinitperiod\bibinitdelim J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=65c741ec753c39cbd7dcd1eacb74f16c}{%
+           family={Wallace},
+           familyi={W\bibinitperiod},
+           given={Neil},
+           giveni={N\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{08fcc3da2d2aacef723fbe42803dd443}
+      \strng{fullhash}{08fcc3da2d2aacef723fbe42803dd443}
+      \strng{bibnamehash}{08fcc3da2d2aacef723fbe42803dd443}
+      \strng{authorbibnamehash}{08fcc3da2d2aacef723fbe42803dd443}
+      \strng{authornamehash}{08fcc3da2d2aacef723fbe42803dd443}
+      \strng{authorfullhash}{08fcc3da2d2aacef723fbe42803dd443}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{author}
+      \field{issn}{02715287}
+      \field{journaltitle}{Quarterly Review}
+      \field{month}{9}
+      \field{number}{3}
+      \field{shortjournal}{{QR}}
+      \field{title}{Some Unpleasant Monetarist Arithmetic}
+      \field{urlday}{20}
+      \field{urlmonth}{12}
+      \field{urlyear}{2024}
+      \field{volume}{5}
+      \field{year}{1981}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.21034/qr.531
+      \endverb
+      \verb{file}
+      \verb Full Text:/Users/felipe/Zotero/storage/HYCS7CXJ/Sargent - 1981 - Some Unpleasant Monetarist Arithmetic.pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://researchdatabase.minneapolisfed.org/concern/publications/0c483j46q
+      \endverb
+      \verb{url}
+      \verb https://researchdatabase.minneapolisfed.org/concern/publications/0c483j46q
+      \endverb
+    \endentry
+    \entry{sims_four-equation_2023}{article}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=b8261c59cca4cea65a92c384eaddb25c}{%
+           family={Sims},
+           familyi={S\bibinitperiod},
+           given={Eric},
+           giveni={E\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=7b0cb32f796723b31bb3d35b7abab725}{%
+           family={Wu},
+           familyi={W\bibinitperiod},
+           given={Jing\bibnamedelima Cynthia},
+           giveni={J\bibinitperiod\bibinitdelim C\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=f83176d7990e7bd6ad17dee08c194d1c}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Ji},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{2357b51112b95ccf1ff98b0e867d50be}
+      \strng{fullhash}{2357b51112b95ccf1ff98b0e867d50be}
+      \strng{bibnamehash}{2357b51112b95ccf1ff98b0e867d50be}
+      \strng{authorbibnamehash}{2357b51112b95ccf1ff98b0e867d50be}
+      \strng{authornamehash}{2357b51112b95ccf1ff98b0e867d50be}
+      \strng{authorfullhash}{2357b51112b95ccf1ff98b0e867d50be}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{author}
+      \field{abstract}{Abstract This paper develops a New Keynesian model featuring financial intermediation, short- and long-term bonds, credit shocks, and scope for unconventional monetary policy. The log-linearized model reduces to four equations: Phillips and {IS} curves, as well as policy rules for the short-term interest rate and the central bank's long-bond portfolio ({QE}). Credit shocks and {QE} appear in both the {IS} and Phillips curves. In equilibrium, optimal monetary policy entails adjusting the short-term interest rate to offset natural rate shocks but using {QE} to offset credit market disruptions. Use of {QE} significantly mitigates the costs of a binding zero lower bound.}
+      \field{day}{11}
+      \field{issn}{0034-6535, 1530-9142}
+      \field{journaltitle}{Review of Economics and Statistics}
+      \field{langid}{english}
+      \field{month}{7}
+      \field{number}{4}
+      \field{title}{The Four-Equation New Keynesian Model}
+      \field{urlday}{21}
+      \field{urlmonth}{12}
+      \field{urlyear}{2024}
+      \field{volume}{105}
+      \field{year}{2023}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{931\bibrangedash 947}
+      \range{pages}{17}
+      \verb{doi}
+      \verb 10.1162/rest_a_01071
+      \endverb
+      \verb{file}
+      \verb Full Text:/Users/felipe/Zotero/storage/L8BBXFNY/Sims et al. - 2023 - The Four-Equation New Keynesian Model.pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://direct.mit.edu/rest/article/105/4/931/102828/The-Four-Equation-New-Keynesian-Model
+      \endverb
+      \verb{url}
+      \verb https://direct.mit.edu/rest/article/105/4/931/102828/The-Four-Equation-New-Keynesian-Model
+      \endverb
+    \endentry
+    \entry{werning_recalculating_2024}{article}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=ebd1f60a438be53ef8d9913fec909524}{%
+           family={Werning},
+           familyi={W\bibinitperiod},
+           given={Iván},
+           giveni={I\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{ebd1f60a438be53ef8d9913fec909524}
+      \strng{fullhash}{ebd1f60a438be53ef8d9913fec909524}
+      \strng{bibnamehash}{ebd1f60a438be53ef8d9913fec909524}
+      \strng{authorbibnamehash}{ebd1f60a438be53ef8d9913fec909524}
+      \strng{authornamehash}{ebd1f60a438be53ef8d9913fec909524}
+      \strng{authorfullhash}{ebd1f60a438be53ef8d9913fec909524}
+      \field{sortinit}{W}
+      \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{author}
+      \field{day}{13}
+      \field{issn}{0271-5287}
+      \field{journaltitle}{Quarterly Review}
+      \field{langid}{english}
+      \field{month}{11}
+      \field{number}{3}
+      \field{shortjournal}{{QR}}
+      \field{title}{Recalculating Sargent and Wallace’s “Some Unpleasant Monetarist Arithmetic”}
+      \field{urlday}{20}
+      \field{urlmonth}{12}
+      \field{urlyear}{2024}
+      \field{volume}{44}
+      \field{year}{2024}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.21034/qr.4431
+      \endverb
+      \verb{urlraw}
+      \verb https://researchdatabase.minneapolisfed.org/concern/publications/kp78gg58h
+      \endverb
+      \verb{url}
+      \verb https://researchdatabase.minneapolisfed.org/concern/publications/kp78gg58h
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+
